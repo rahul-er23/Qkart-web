@@ -30,4 +30,22 @@ public class ViewProduct extends LoginRegister {
 			e.printStackTrace();
 		}
 	}
+
+	public int singleProduct(int id) {
+
+		try {
+			pstate = con.prepareStatement("select * from productdetails where ProductID=" + id);
+			pro = pstate.executeQuery();
+			while (pro.next()) {
+				System.out.println("\nProduct ID: " + pro.getInt(1) + "\nName: " + pro.getString(3) + "\nDescription: "
+						+ pro.getString(2) + "\nPrice: " + pro.getString(4) + "\nAvailable Quantity: " + pro.getInt(5));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		// finally{
+		// return id;
+		// }
+		return id;
+	}
 }
