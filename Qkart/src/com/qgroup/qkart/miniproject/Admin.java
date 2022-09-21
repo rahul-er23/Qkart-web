@@ -93,9 +93,15 @@ public class Admin extends ViewProduct {
 
 			pstate = con.prepareStatement("select * from userdetails group by UserId order by UserId asc");
 			pro = pstate.executeQuery();
+			System.out.printf("%-10s%-20s%-15s%-25s%-15s%-25s\n\n", "User ID", "UserName", "Password", "Date", "city",
+					"E-mail ID");
 			while (pro.next()) {
-				System.out.println(pro.getInt(1) + " " + pro.getString(2) + " \t\t" + pro.getString(3) + " \t\t"
-						+ pro.getString(4) + " \t\t" + pro.getString(5) + " \t\t" + pro.getString(6));
+				// System.out.println(pro.getInt(1) + " " + pro.getString(2) + " \t\t" +
+				// pro.getString(3) + " \t\t"
+				// + pro.getString(4) + " \t\t" + pro.getString(5) + " \t\t" +
+				// pro.getString(6));
+				System.out.printf("%-10s%-20s%-15s%-25s%-15s%-25s\n", pro.getInt(1), pro.getString(2), pro.getString(3),
+						pro.getString(4), pro.getString(5), pro.getString(6));
 			}
 			System.out.println("\n");
 		} catch (Exception e) {
@@ -108,9 +114,11 @@ public class Admin extends ViewProduct {
 			pstate = con.prepareStatement("select UserId,UserName,Name,Quantity,Price,ProductID"
 					+ " from purchasedetails group by UserId order by UserId asc");
 			pro = pstate.executeQuery();
+			// System.out.printf("%-10s%-20s%-15s%-25s%-15s\n",pro.getInt(1),pro.getString(2),pro.getString(5),pro.getInt(6),pro.getInt(6));
 			while (pro.next()) {
 				System.out.println(pro.getInt(1) + " " + pro.getString(2) + " \t\t" + pro.getString(3) + " \t\t"
 						+ pro.getString(4) + " \t\t" + pro.getString(5) + " \t\t" + pro.getString(6));
+
 			}
 			System.out.println("\n");
 		} catch (Exception e) {
