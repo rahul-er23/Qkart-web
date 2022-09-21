@@ -61,6 +61,7 @@ public class LoginRegister {
 		password2 = s1.next();
 		
 		if(login(username2,password2)){
+			break;
 		}else {	
 			System.out.println("Incorrect Username or Password, Please Try again!!!\n\n");	
 			if(i==3) {
