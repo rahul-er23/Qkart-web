@@ -1,4 +1,5 @@
 package com.qgroup.qkart.miniproject;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -46,57 +47,53 @@ public class LoginRegister {
 			// login();
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			System.out.println("Unexpected Input provided, Please Try Again");
+			System.exit(0);
 		}
 	}
 
-	
 	public String loginCheck() {
-				
-		for(int i=1;i<=3;i++) {
-		System.out.println("Enter Username: ");
-		username2 = s1.next();
 
-		System.out.println("Enter Password: ");
-		password2 = s1.next();
-		
-		if(login(username2,password2)){
-			break;
-		}else {	
-			System.out.println("Incorrect Username or Password, Please Try again!!!\n\n");	
-			if(i==3) {
-				System.exit(0);
+		for (int i = 1; i <= 3; i++) {
+			System.out.println("Enter Username: ");
+			username2 = s1.next();
+
+			System.out.println("Enter Password: ");
+			password2 = s1.next();
+
+			if (login(username2, password2)) {
+				break;
+			} else {
+				System.out.println("Incorrect Username or Password, Please Try again!!!\n\n");
+				if (i == 3) {
+					System.exit(0);
+				}
 			}
 		}
-		}
-		return username2;	
+		return username2;
 	}
-	
-	
-	public boolean login(String username,String password) {
+
+	public boolean login(String username, String password) {
 
 		try {
-			
-			pstate = con.prepareStatement(
-					"select UserName,Password from userdetails");
+
+			pstate = con.prepareStatement("select UserName,Password from userdetails");
 			pro = pstate.executeQuery();
-			//System.out.println("passvalidate"+username2);
+
 			while (pro.next()) {
-				//user2=pro.getString(1);
-				//pass2=pro.getString(2);
-				
-				if ((username.equals(pro.getString(1)))&& (password.equals(pro.getString(2)))) {
+
+				if ((username.equals(pro.getString(1))) && (password.equals(pro.getString(2)))) {
 					System.out.println("\nLogin Successful");
 					return true;
 				}
 			}
-			
+
 			pstate = con.prepareStatement("delete from cart;");
 			int check = pstate.executeUpdate();
-			// System.out.println("Delete successfully");
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			System.out.println("Unexpected Input provided, Please Try Again");
+			System.exit(0);
 		}
 		return false;
 	}

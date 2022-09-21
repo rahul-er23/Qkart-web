@@ -11,7 +11,7 @@ public class Qkart {
 	public static int productid;
 
 	public static void main(String[] args) {
-		
+
 		Qkart.t1();
 		Qkart.t2();
 		Qkart.t3();
@@ -22,10 +22,7 @@ public class Qkart {
 	public static void t1() {
 		try {
 			System.out.println("\t\t\t*****   Hello, Welcome to Qkart   *****\n\n");
-			System.out.println("\t\t\t\t\tPlease Select....\n\t\t 1.Login\t\t 2.Register\t\t 3.Admin");// user input
-																										// login
-																										// or
-																										// registration
+			System.out.println("\t\t\t\t\tPlease Select....\n\t\t 1.Login\t\t 2.Register\t\t 3.Admin");
 			cat = s.nextInt();
 
 			if (cat == 1) {
@@ -36,18 +33,15 @@ public class Qkart {
 				cb.register();
 				uname = cb.loginCheck();
 			} else if (cat == 3) {
-				a.adminLogin();
-				// call admin method or class
+				a.adminLogin();// call admin method or class
 			} else {
 				System.out.println("\nPlease Try Again");
 				System.exit(0);
-				//Qkart.t1();
 			}
 		} catch (Exception e) {
 			System.out.println("Pleaes Enter Correct Input and Try Again");
 			System.exit(0);
 		}
-
 	}
 
 	public static void t2() {
@@ -58,22 +52,16 @@ public class Qkart {
 			if (cat == 1 || cat == 2 || cat == 3 || cat == 4) {
 				cb.allProduct(cat);// call method
 
-				System.out.println("\n\nPlease Enter Product ID to see the Product Details... ");// ask user if he want
-																									// to
-																									// see
-																									// the product in
-																									// details
+				System.out.println("\n\nPlease Enter Product ID to see the Product Details... ");
 				cat = s.nextInt();// taking user input
 				int pid = cb.singleProduct(cat);// calling single product detail method to show product on screen
 				productid = pid;
 			} else {
 				System.out.println("\nTry Again with Enter Correct Input");
-				//Qkart.t1();
 				System.exit(0);
 			}
 		} catch (Exception e) {
 			System.out.println("Pleaes Enter Correct Input and Try Again");
-			//Qkart.t1();
 			System.exit(0);
 		}
 	}
@@ -96,11 +84,9 @@ public class Qkart {
 			} else {
 				System.out.println("\nPlease Try with Correct Input");
 				System.exit(0);
-				//Qkart.t3();
 			}
 		} catch (Exception e) {
 			System.out.println("Pleaes Enter Correct Input and Try Again");
-			//Qkart.t3();
 			System.exit(0);
 		}
 	}
@@ -113,17 +99,14 @@ public class Qkart {
 				Qkart.t2();
 				Qkart.t3();
 			} else if (cat == 2) {
-
 				System.out.println("\nThanks for Shopping");
 				System.exit(0);
 			} else {
 				System.out.println("\nPlease Try Again");
 				System.exit(0);
-				//Qkart.t5();
 			}
 		} catch (Exception e) {
 			System.out.println("Pleaes Enter Correct Input and Try Again");
-			//Qkart.t4();
 			System.exit(0);
 		}
 	}
@@ -140,10 +123,8 @@ public class Qkart {
 				System.out.println("\nThanks for Shopping");
 				System.exit(0);
 			}
-
 		} catch (Exception e) {
 			System.out.println("Pleaes Enter Correct Input and Try Again");
-			//Qkart.t2();
 			System.exit(0);
 		}
 	}
