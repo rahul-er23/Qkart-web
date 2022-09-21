@@ -3,7 +3,7 @@ package com.qgroup.qkart.miniproject;
 public class ViewProduct extends LoginRegister {
 
 	public void allProduct(int id) {
-		System.out.println("\nAll Product");
+		System.out.println("\nAll Product\n");
 
 		try {
 			if (id == 1) {
@@ -17,15 +17,18 @@ public class ViewProduct extends LoginRegister {
 			} else {
 				System.out.println("Invalid input");
 			}
-
+			
 			pro = pstate.executeQuery();
+			
+			
 			while (pro.next()) {
+				
 				System.out.println("\nProduct ID: " + pro.getInt(1) + "\nName: " + pro.getString(3) + "\nPrice: "
-						+ pro.getString(4));
+					+ pro.getString(4));
 				System.out.println(
 						"=========================================================================================");
 			}
-
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -36,9 +39,9 @@ public class ViewProduct extends LoginRegister {
 		try {
 			pstate = con.prepareStatement("select * from productdetails where ProductID=" + id);
 			pro = pstate.executeQuery();
-			System.out.printf("%-12s%-30s%-35s%-18s%-15s\n\n","User ID","Product Name","Discription","Price","Available Quantity");
+			System.out.printf("%-12s%-30s%-35s%-18s%-15s\n\n","User ID","Product Name","Description","Price","Available Quantity");
 			while (pro.next()) {
-			System.out.printf("%-12s%-30.30s%-35.30s%-18s%-15s\n",pro.getInt(1),pro.getString(3),pro.getString(2),pro.getString(4),pro.getString(5));
+			System.out.printf("%-12s%-30.25s%-35.27s%-18s%-15s\n",pro.getInt(1),pro.getString(3),pro.getString(2),pro.getString(4),pro.getString(5));
 				//System.out.println("\nProduct ID: " + pro.getInt(1) + "\nName: " + pro.getString(3) + "\nDescription: "
 					//	+ pro.getString(2) + "\nPrice: " + pro.getString(4) + "\nAvailable Quantity: " + pro.getInt(5));
 			}

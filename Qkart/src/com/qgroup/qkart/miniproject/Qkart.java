@@ -11,7 +11,7 @@ public class Qkart {
 	public static int productid;
 
 	public static void main(String[] args) {
-		System.out.println("welcome to GIT part");
+		
 		Qkart.t1();
 		Qkart.t2();
 		Qkart.t3();

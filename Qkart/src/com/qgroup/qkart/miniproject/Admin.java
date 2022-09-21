@@ -69,12 +69,14 @@ public class Admin extends ViewProduct {
 			pstate = con.prepareStatement(
 					"select ProductID,Name,Quantity from productdetails group by ProductID order by Quantity asc");
 			pro = pstate.executeQuery();
+			//System.out.printf("%-10s%-20s%-15s%-25s%-15s%-25s\n\n", "User ID", "UserName", "Password", "Date", "city",
+			//		"E-mail ID");
 			while (pro.next()) {
 				map.put(pro.getString(1), pro.getString(3));
 			}
 			System.out.println("ProductID = Quantity");
 			for (String key : map.keySet()) {
-				System.out.println(key + " = " + map.get(key));
+				System.out.println(key + "       =    " + map.get(key));
 
 			}
 			System.out.println("Please Enter product ID to see the Details: ");
