@@ -11,7 +11,7 @@ public class Qkart {
 	public static int productid;
 
 	public static void main(String[] args) {
-
+		System.out.println("welcome to GIT part");
 		Qkart.t1();
 		Qkart.t2();
 		Qkart.t3();
@@ -40,7 +40,8 @@ public class Qkart {
 				// call admin method or class
 			} else {
 				System.out.println("\nPlease Try Again");
-				Qkart.t1();
+				System.exit(0);
+				//Qkart.t1();
 			}
 		} catch (Exception e) {
 			System.out.println("Pleaes Enter Correct Input and Try Again");
@@ -94,7 +95,8 @@ public class Qkart {
 				Qkart.t3();
 			} else {
 				System.out.println("\nPlease Try with Correct Input");
-				Qkart.t3();
+				System.exit(0);
+				//Qkart.t3();
 			}
 		} catch (Exception e) {
 			System.out.println("Pleaes Enter Correct Input and Try Again");
@@ -116,7 +118,8 @@ public class Qkart {
 				System.exit(0);
 			} else {
 				System.out.println("\nPlease Try Again");
-				Qkart.t5();
+				System.exit(0);
+				//Qkart.t5();
 			}
 		} catch (Exception e) {
 			System.out.println("Pleaes Enter Correct Input and Try Again");

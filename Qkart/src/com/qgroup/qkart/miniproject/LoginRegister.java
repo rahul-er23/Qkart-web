@@ -85,7 +85,7 @@ public class LoginRegister {
 				//user2=pro.getString(1);
 				//pass2=pro.getString(2);
 				
-				if ((username.equals(pro.getString(1)))&& (password.equals(pro.getString(1)))) {
+				if ((username.equals(pro.getString(1)))&& (password.equals(pro.getString(2)))) {
 					System.out.println("\nLogin Successful");
 					return true;
 				}
